@@ -22,31 +22,31 @@ SELECT EMP_NAME, SUBSTR(EMP_NAME, 4, 1)
 
 -- 문자열에서 찾기
 SELECT INSTR('HELLO, ORACLE!', 'L') AS "첫번째L위치"
-				 , INSTR('HELLO, ORACLE!', 'L', 5) AS "5번째이후 L위치"
-				 , INSTR('HELLO, ORACLE!', 'L', 2, 2) AS "2번째위치 이후 두번째 나타나는 L위치"
-	FROM dual;
+			, INSTR('HELLO, ORACLE!', 'L', 5) AS "5번째이후 L위치"
+			, INSTR('HELLO, ORACLE!', 'L', 2, 2) AS "2번째위치 이후 두번째 나타나는 L위치"
+  FROM dual;
 
 -- 문자열 교체
 SELECT REPLACE('Oh, Hello Oracle!', 'Hello', 'HELL') AS "변경된 문자열"
-	FROM dual;
+  FROM dual;
 
 -- 빈공간을 특정 문자로 채우기
 SELECT LPAD('Matrix', 20, '#'),
-					RPAD('Oracle', 20, '@')
-	FROM dual;
+			  RPAD('Oracle', 20, '@')
+  FROM dual;
 
 SELECT LPAD('10', 2, '0')
-	FROM dual;
+  FROM dual;
 
 -- 두 문자열 합치기
 SELECT CONCAT('Hello ', 'World')
-	FROM dual;
+  FROM dual;
 
 -- 공백 제거
 SELECT TRIM('      Marvel Universe          ')
-				 , LTRIM('      Marvel Universe          ')
-				 , RTRIM('      Marvel Universe          ')
-	FROM dual;
+			, LTRIM('      Marvel Universe          ')
+			, RTRIM('      Marvel Universe          ')
+  FROM dual;
 
 SELECT 1 AS "같아요"
 	FROM dual
@@ -54,10 +54,10 @@ SELECT 1 AS "같아요"
 
 -- 숫자함수
 SELECT ROUND(1234.3456)
-			     , ROUND(1234.3456, 3) -- 소수점 세번째자리까지 반올림
-				 , TRUNC(1234.3456, 3)
-				 , CEIL(3.14)
-				 , FLOOR(3.14)
-				 , MOD(10, 2)
-	FROM dual;
+		    , ROUND(1234.3456, 3) -- 소수점 세번째자리까지 반올림
+		    , TRUNC(1234.3456, 3)
+			, CEIL(3.14)
+		    , FLOOR(3.14)
+			, MOD(10, 2)
+  FROM dual;
 				
