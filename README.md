@@ -598,10 +598,12 @@ SQL> alter session set nls_date_format='dd-MON-rr';
 
 ### DDL
 
-- DDL 명령어 계속
+- DDL 명령어 계속 - [쿼리](./day06/1.DDL.sql)
     - 5일차와 동일
 
 ### 객체
+
+- [쿼리](./day06/2.Object.sql)
 
 - 데이터 사전 - 일반 테이블 외 DB를 운영하는 데 필요한 특수한 테이블
     - USER_XXXX - 현재 DB에 접속한 사용자가 소유한 객체 정보
@@ -678,7 +680,7 @@ SQL> alter session set nls_date_format='dd-MON-rr';
 
 ### 제약조건
 
-- 제약조건
+- 제약조건 - [쿼리](./day06/3.제약조건.sql)
     - 테이블에 저장할 데이터를 정확하게 규제하는 특수한 규칙
     - 조건에 맞지 않는 데이터를 걸러내는 기능
 
@@ -700,8 +702,12 @@ SQL> alter session set nls_date_format='dd-MON-rr';
     - DB에 저장되는 데이터의 정확성과 일관성을 보장한다는 의미
     - 영역 무결성(적절한 형식의 데이터나 NULL 불가), 개체 무결성(PK 개념), 참조 무결성(FK 개념)
 
-## Day07
+- CASCADE 계단식 처리
+    - 부모 테이블의 PK 컬럼 해당데이터를 지우면 자식 테이블의 FK에 참조 중인 레코드를 전부 지우는 기능
+    - ON DELETE CASCADE - 부모 테이블 데이터를 지우면 자식 데이터도 자동 삭제
+    - ON DELETE SET NULL - 부모 테이블 데이터를 지우면 자식 FK 데이터가 자동 NULL
 
-### 제약조건
 
-- FK CASCADE
+
+
+
