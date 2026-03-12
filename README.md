@@ -854,11 +854,11 @@ SQL> alter session set nls_date_format='dd-MON-rr';
     END LOOP;
 
     -- 반복문 내 continue, break
-    FOR V_NUM IN 1..100 LOOP
-		CONTINUE WHEN MOD(V_NUM, 2) = 1; -- continue
+    FOR V_NUM IN 1..100 LOOP    
+		CONTINUE WHEN MOD(V_NUM, 2) = 1; -- continue (다음 실행문을 실행시키지 않고 넘어감)
 		DBMS_OUTPUT.PUT_LINE('V_NUM => ' || V_NUM);
 		EXIT WHEN V_NUM > 10; -- break
-	END LOOP;
+	END LOOP;   -- 결과값 : 짝수만 출력
     ```
 
 - 예외처리 - [쿼리](./day07/6.예외처리.sql)
@@ -1247,7 +1247,19 @@ SQL> alter session set nls_date_format='dd-MON-rr';
 
 ### 인덱스 연습 프로젝트
 
+- 개요
+    - 인덱스의 필요성, 성능 확인
+    - 인덱스 없이 조회는 느림, 인덱스를 생성하면 조회 빠름
+    - 아무 컬럼에나 인덱스 걸면 안됨 -> 반대로 조회가 느려짐
+    - 보통 `인덱스를 건다`라고 이야기함
 
+
+#### 테스트 실행 순서
+
+- 주문 테이블 생성 - ORDERS_BIG - [쿼리](./day10/1.인덱스테스트용_테이블.sql)
+- 300만건 더미데이터 생성 - [쿼리](./day10/2.더미데이터_300만건.sql)
+
+- 인덱스 테스트
 
 
 
